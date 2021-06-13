@@ -7,10 +7,6 @@
       <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
         {{qoutes}}
       </h3>
-      <span class="text-muted font-weight-bold font-size-h4">New Here?
-        <a routerLink="/auth/registration" id="kt_login_signup" class="text-primary font-weight-bolder">{{
-          "AUTH.GENERAL.SIGNUP_BUTTON" | translate }}</a>
-      </span>
     </div>
     <!--end::Title-->
 
@@ -18,7 +14,7 @@
     <ng-container *ngIf="!hasError">
       <div class="mb-10 alert alert-custom alert-light-info alert-dismissible">
         <div class="alert-text">
-          Use account <strong>{{ defaultAuth.email }}</strong> and password
+          Use email <strong>{{ defaultAuth.email }}</strong> and password
           <strong>{{ defaultAuth.password }}</strong> to continue.
         </div>
       </div>
@@ -28,7 +24,7 @@
     <!-- begin::Alert error-->
     <ng-container *ngIf="hasError">
       <div class="mb-10 alert alert-custom alert-light-danger alert-dismissible">
-        <div class="alert-text">The login details are incorrect</div>
+        <div class="alert-text"> Invalid email or password.</div>
       </div>
     </ng-container>
     <!-- end::Alert error-->
@@ -110,6 +106,16 @@
         <span class="spinner spinner-primary ml-5"></span>
       </ng-container>
     </div>
+
+    <!-- begin::Sign Up -->
+    <div class="mb-0 mt-2">
+      <p class="text-muted">Don’t have an account? <a routerLink="/auth/registration" id="kt_login_signup"
+          class="text-primary font-weight-bolder">{{
+          "AUTH.GENERAL.SIGNUP_BUTTON" | translate }}</a>
+      </p>
+    </div>
+    <!-- end::Sign Up -->
+
     <!--end::Action-->
   </form>
   <!--end::Form-->
